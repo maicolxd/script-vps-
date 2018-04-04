@@ -1,22 +1,3 @@
-Skip to content
- Switch to mobile version
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @maicolxd
-Sign out
-0
-0 0 maicolxd/script-vps-
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-script-vps-/README.sh
-65757ed  just now
-@maicolxd maicolxd Update README.sh
-    
-283 lines (251 sloc)  10.9 KB
-
 #!/bin/bash
 # ~mscvip~
 # initialisasi var
