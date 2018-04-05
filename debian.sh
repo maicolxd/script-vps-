@@ -244,13 +244,13 @@ echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
 echo "menu         (Muestra una lista de comandos disponibles)"  | tee -a log-install.txt
-echo "user-add     (crear cuenta SSH)"  | tee -a log-install.txt
+echo "crear-user   (crear cuenta SSH)"  | tee -a log-install.txt
 echo "trial        (crear cuenta de prueba)"  | tee -a log-install.txt
 echo "user-del     (Eliminar cuenta SSH)"  | tee -a log-install.txt
-echo "user-login   (verificar usuarios online)"  | tee -a log-install.txt
+echo "user-onli   (verificar usuarios online)"  | tee -a log-install.txt
 echo "user-list    (Verificar miembro de SSH)"  | tee -a log-install.txt
-echo "expdel       (eliminar Usuarios expirados)"  | tee -a log-install.txt
-echo "resvis       (Reiniciar Servicio Dropbear, Webmin, Squid3, OpenVPN y SSH)"  | tee -a log-install.txt
+echo "elexp       (eliminar Usuarios expirados)"  | tee -a log-install.txt
+echo "reiniciar    (Reiniciar Servicio Dropbear, Webmin, Squid3, OpenVPN y SSH)"  | tee -a log-install.txt
 echo "reboot       (Reiniciar VPS)"  | tee -a log-install.txt
 echo "speedtest    (Speedtest VPS)"  | tee -a log-install.txt
 echo "info         (Muestra información del sistema)"  | tee -a log-install.txt
