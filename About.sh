@@ -2,10 +2,10 @@
 
 clear
 echo -e "================================================="
-echo -e "# Script Auto INSTALADO SSH & OpenVPN             #"
+echo -e "# Script Auto INSTALADO SSH & OpenVPN           #"
 echo -e "#-----------------------------------------------#"
 echo -e "# FUL Debian 7 32 bit & 64 bit                  #"
-echo -e "# MMMMMMMMMMMMMMSSSSSSCCCCCCCCCCCCCCCCCC    #"
+echo -e "# los de la zona vip                            #"
 echo -e "# LOS ~MSC~                                     #"
 echo -e "#-----------------------------------------------#"
 echo -e "PERU"
