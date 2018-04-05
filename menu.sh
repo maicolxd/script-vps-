@@ -16,4 +16,5 @@ echo -e "Ⓜ️ speedtest     : Speedtest VPS"
 echo -e "Ⓜ️ info          : info del sistema"
 echo -e "Ⓜ️ about         : Info del script"
 echo -e "Ⓜ️ exit          : salir del terminal SSH"
-echo -e "~msc vip~"
+echo -e "=============~mscvip~"===================
+echo -e ""
