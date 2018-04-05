@@ -176,7 +176,7 @@ rm -rf /root/ddos-deflate-master.zip
 
 # setting banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/kholizsivoi/script/master/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/maicolxd/script-vps-/master/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
@@ -184,31 +184,31 @@ service dropbear restart
 
 # download script
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/kholizsivoi/script/master/menu.sh"
-wget -O user-add "https://raw.githubusercontent.com/kholizsivoi/script/master/user-add.sh"
-wget -O trial "https://raw.githubusercontent.com/kholizsivoi/script/master/trial.sh"
-wget -O user-del "https://raw.githubusercontent.com/kholizsivoi/script/master/hapus.sh"
-wget -O user-login "https://raw.githubusercontent.com/kholizsivoi/script/master/user-login.sh"
-wget -O user-list "https://raw.githubusercontent.com/kholizsivoi/script/master/user-list.sh"
-wget -O expdel "https://raw.githubusercontent.com/kholizsivoi/script/master/delexp.sh"
-wget -O resvis "https://raw.githubusercontent.com/kholizsivoi/script/master/resvis.sh"
+wget -O menu "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/menu.sh"
+wget -O crear-user "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/ prueva "
+wget -O trial "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/prueva.sh"
+wget -O user-del "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-del.sh"
+wget -O user-login "https://raw.githubusercontent.com/maicolxd/script-vps-/master/user-onli.sh"
+wget -O user-list "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-list.sh"
+wget -O elexp "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/elexp.sh"
+wget -O resetear "https://raw.githubusercontent.com/kholizsivoi/script/master/resvis.sh"
 wget -O speedtest "https://raw.githubusercontent.com/kholizsivoi/script/master/speedtest_cli.py"
 wget -O info "https://raw.githubusercontent.com/kholizsivoi/script/master/info.sh"
-wget -O about "https://raw.githubusercontent.com/kholizsivoi/script/master/about.sh"
+wget -O about "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/acerca.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
 chmod +x menu
-chmod +x user-add
-chmod +x trial
+chmod +x crear-user
+chmod +x prueva
 chmod +x user-del
-chmod +x user-login
+chmod +x user-onli
 chmod +x user-list
-chmod +x resvis
+chmod +x resetear
 chmod +x speedtest
 chmod +x info
-chmod +x expdel
-chmod +x about
+chmod +x elexp
+chmod +x acerca
 
 # finishing
 cd
@@ -244,13 +244,13 @@ echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
 echo "menu         (Muestra una lista de comandos disponibles)"  | tee -a log-install.txt
-echo "user-add     (crear cuenta SSH)"  | tee -a log-install.txt
+echo "crear-user   (crear cuenta SSH)"  | tee -a log-install.txt
 echo "trial        (crear cuenta de prueba)"  | tee -a log-install.txt
 echo "user-del     (Eliminar cuenta SSH)"  | tee -a log-install.txt
-echo "user-login   (verificar usuarios online)"  | tee -a log-install.txt
+echo "user-onli   (verificar usuarios online)"  | tee -a log-install.txt
 echo "user-list    (Verificar miembro de SSH)"  | tee -a log-install.txt
-echo "expdel       (eliminar Usuarios expirados)"  | tee -a log-install.txt
-echo "resvis       (Reiniciar Servicio Dropbear, Webmin, Squid3, OpenVPN y SSH)"  | tee -a log-install.txt
+echo "elexp       (eliminar Usuarios expirados)"  | tee -a log-install.txt
+echo "reiniciar    (Reiniciar Servicio Dropbear, Webmin, Squid3, OpenVPN y SSH)"  | tee -a log-install.txt
 echo "reboot       (Reiniciar VPS)"  | tee -a log-install.txt
 echo "speedtest    (Speedtest VPS)"  | tee -a log-install.txt
 echo "info         (Muestra información del sistema)"  | tee -a log-install.txt
