@@ -1,4 +1,5 @@
 #!/bin/bash
+info
 echo -e ""
 echo -e "============~MSCPERU=================#" 
 echo -e "COMANDOS        : INFO DE LOS COMANDOS"
