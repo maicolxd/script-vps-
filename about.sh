@@ -1,6 +1,5 @@
 #!/bin/bash
 
-clear
 echo -e "#===============================================#"
 echo -e "#     Script AUTO INSTALADO SSH & OpenVPN       #"
 echo -e "#-----------------------------------------------#"
