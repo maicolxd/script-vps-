@@ -2,7 +2,7 @@
 
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expira (VPS): " 
+read -p "Expira (VPS): " masaaktif
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
@@ -19,6 +19,6 @@ echo -e "Config OpenVPN (TCP 1194): http://$IP:81/client.ovpn"
 echo -e "Username: $Login "
 echo -e "Password: $Pass"
 echo -e "------------------------"
-echo -e "Grupo vip: 30 dias"
+echo -e "Grupo vip: $exp"
 echo -e "========================"
 echo -e "========~mscvip~========"
