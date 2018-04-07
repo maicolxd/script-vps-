@@ -9,7 +9,7 @@ Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 useradd -e `date -d "$hari days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
-echo -e "====cuenta SSH Trial===="
+echo -e "====cuenta SSH Prueva===="
 echo -e "Host: $IP" 
 echo -e "Port OpenSSH   : 22,53"
 echo -e "Port Dropbear  : 80,443"
@@ -19,4 +19,4 @@ echo -e "Config OpenVPN (TCP 1194): http://$IP:81/client.ovpn"
 echo -e "Username: $Login"
 echo -e "Password: $Pass\n"
 echo -e "========================="
-echo -e "~MSC VIP~"
+echo -e "=========MSC VIP========="
