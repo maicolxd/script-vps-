@@ -35,6 +35,7 @@ apt-get update
 
 # install webserver
 apt-get -y install nginx
+apt-get install figlet -y
 
 # install essential package
 apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
@@ -67,7 +68,7 @@ wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/kholizsivoi/
 cd /etc/openvpn/
 tar xf openvpn.tar
 rm -f /etc/openvpn/openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/kholizsivoi/script/master/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/maicolxd/script/master/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
@@ -79,7 +80,7 @@ service openvpn restart
 
 # konfigurasi openvpn
 cd /etc/openvpn/
-wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/kholizsivoi/script/master/client-1194.conf"
+wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/maicolxd/script/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
 cp client.ovpn /home/vps/public_html/
 
@@ -96,14 +97,14 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 # setting port ssh
 cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 53' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 444 -p 80"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443 -p 80"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
@@ -165,18 +166,9 @@ iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
 iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
 iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
 
-# install ddos deflate
-cd
-apt-get -y install dnsutils dsniff
-wget https://raw.githubusercontent.com/kholizsivoi/script/master/ddos-deflate-master.zip
-unzip ddos-deflate-master.zip
-cd ddos-deflate-master
-./install.sh
-rm -rf /root/ddos-deflate-master.zip
-
 # setting banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/kholizsivoi/script/master/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
@@ -185,30 +177,30 @@ service dropbear restart
 # download script
 cd /usr/bin
 wget -O menu "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/menu.sh"
-wget -O crear-user "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/ prueva "
-wget -O trial "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/prueva.sh"
-wget -O user-del "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-del.sh"
-wget -O user-login "https://raw.githubusercontent.com/maicolxd/script-vps-/master/user-onli.sh"
-wget -O user-list "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-list.sh"
-wget -O elexp "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/elexp.sh"
-wget -O resetear "https://raw.githubusercontent.com/kholizsivoi/script/master/resvis.sh"
-wget -O speedtest "https://raw.githubusercontent.com/kholizsivoi/script/master/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/kholizsivoi/script/master/info.sh"
-wget -O about "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/acerca.sh"
+wget -O crear "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-add.sh"
+wget -O prueva "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/prueva.sh"
+wget -O eliminar "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/hapus.sh"
+wget -O online "https://raw.githubusercontent.com/maicolxd/script-vps-/master/user-login.sh"
+wget -O lista "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/user-list.sh"
+wget -O expirados "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/delexp.sh"
+wget -O reiniciar "https://raw.githubusercontent.com/maicolxd/script/master/reiniciar.sh"
+wget -O velocidad "https://raw.githubusercontent.com/kholizsivoi/script/master/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/info.sh"
+wget -O mas "https://raw.githubusercontent.com/maicolxd/script-vps-/mscvip-1/about.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
 chmod +x menu
-chmod +x crear-user
+chmod +x crear
 chmod +x prueva
-chmod +x user-del
-chmod +x user-onli
-chmod +x user-list
-chmod +x resetear
-chmod +x speedtest
+chmod +x eliminar
+chmod +x online
+chmod +x lista
+chmod +x reiniciar
+chmod +x velocidad
 chmod +x info
-chmod +x elexp
-chmod +x acerca
+chmod +x expirados
+chmod +x mas
 
 # finishing
 cd
@@ -227,55 +219,9 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 
 # info
-echo "~sivoi~"
-echo "Autoscript Include:" | tee log-install.txt
-echo "===========================================" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Service"  | tee -a log-install.txt
-echo "-------"  | tee -a log-install.txt
-echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo "Dropbear : 80, 444"  | tee -a log-install.txt
-echo "SSL      : 443"  | tee -a log-install.txt
-echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
-echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo "nginx    : 81"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Script"  | tee -a log-install.txt
-echo "------"  | tee -a log-install.txt
-echo "menu         (Menampilkan daftar perintah yang tersedia)"  | tee -a log-install.txt
-echo "user-add     (Membuat Akaun SSH)"  | tee -a log-install.txt
-echo "trial        (Membuat Akaun Trial)"  | tee -a log-install.txt
-echo "user-del     (Menghapus Akaun SSH)"  | tee -a log-install.txt
-echo "user-login   (Cek User Login)"  | tee -a log-install.txt
-echo "user-list    (Cek Member SSH)"  | tee -a log-install.txt
-echo "expdel       (Delete User expired)"  | tee -a log-install.txt
-echo "resvis       (Restart Service Dropbear, Webmin, Squid3, OpenVPN dan SSH)"  | tee -a log-install.txt
-echo "reboot       (Reboot VPS)"  | tee -a log-install.txt
-echo "speedtest    (Speedtest VPS)"  | tee -a log-install.txt
-echo "info         (Menampilkan Informasi Sistem)"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Fitur lain"  | tee -a log-install.txt
-echo "----------"  | tee -a log-install.txt
-echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "Timezone : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo "IPv6     : [off]"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Thanks To"  | tee -a log-install.txt
-echo "---------"  | tee -a log-install.txt
-echo "Allah"  | tee -a log-install.txt
-echo "Admin And All Member KPN Family"  | tee -a log-install.txt
-echo "Google"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Goup"  | tee -a log-install.txt
-echo "----"  | tee -a log-install.txt
-echo "CPM/OOCPM"  | tee -a log-install.txt
-echo "KPN IMO"  | tee -a log-install.txt
-echo "K.A.G"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "VPS AUTO REBOOT SETIAP JAM 00.00 WIB"  | tee -a log-install.txt
-echo "Log Installation --> /root/log-install.txt"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "==========================================="  | tee -a log-install.txt
 cd
-rm -f /root/debian.sh
+figlet MSC VIP PERU
+figlet TU VPS 
+figlet FUE 
+figlet CONFIGURADO
+menu
