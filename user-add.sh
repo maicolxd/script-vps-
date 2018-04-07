@@ -14,7 +14,6 @@ echo -e "Host: $IP"
 echo -e "Port OpenSSH   : 22,53"
 echo -e "Port Dropbear  : 80,443"
 echo -e "Port SSL/TLS   : 443"
-echo -e "port badvpn    : 7300
 echo -e "Port Squid     : 8080,3128"
 echo -e "Config OpenVPN (TCP 1194): http://$IP:81/client.ovpn"
 echo -e "Username: $Login "
