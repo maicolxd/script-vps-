@@ -2,7 +2,7 @@
 
 read -p "Username : " Login
 read -p "Password : " Pass
-read -p "Expired (hari): " masaaktif
+read -p "Expira (vps): " masaaktif
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
