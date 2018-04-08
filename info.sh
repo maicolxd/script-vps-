@@ -1,4 +1,4 @@
 #!/bin/bash
 
 neofetch
-figlet MSC VIP PERU
+figlet MSC PERU
