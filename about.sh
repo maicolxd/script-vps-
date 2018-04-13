@@ -1,10 +1,11 @@
 #!/bin/bash
+clear 
 
 echo -e "#===============================================#"
 echo -e "#     Script AUTO INSTALADO SSH & OpenVPN       #"
 echo -e "#-----------------------------------------------#"
-echo -e "#        FUL DEBIAN 7,8,9, 32bit & 64bit        #"
-echo -e "#                     vip                       #"
+echo -e "#    Ubuntu 14,16 ,DEBIAN 7,8,9, 32bit & 64bit  #"
+echo -e "#                     VPS                       #"
 echo -e "#-----------------------------------------------#"
 echo -e "#=====================PERU======================#"
 echo -e "#-------------—---------------------------------#"
@@ -19,4 +20,5 @@ echo -e "☑️ Squid3 Port: 8080, 3128"
 echo -e "☑️ Badvpn: Para juegos port:7300" 
 echo -e "☑️ Webmin: http://IPDeTuVps:10000/" 
 echo -e "☑️ etc"
+echo -e "PARA VOLVER AL MENÚ DIGITE [memu]" 
 echo -e "" 
