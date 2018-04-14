@@ -2,7 +2,7 @@
 clear 
 
 echo -e "#===============================================#"
-echo -e "#     Script AUTO INSTALADO SSH & OpenVPN       #"
+echo -e "#     Script AUTO INSTALADO SSH & Webmin        #"
 echo -e "#-----------------------------------------------#"
 echo -e "#    Ubuntu 14,16 ,DEBIAN 7,8,9, 32bit & 64bit  #"
 echo -e "#                     VPS                       #"
